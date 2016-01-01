@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Conference Information</title>
+		<link rel="stylesheet" type="text/css" href="schedule_viewer/schedule_viewer_ui/style/schedule.css" />
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="upload.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row" id="alerts">
+				<div class="col-md-12" class="alert alert-success" id="curr_alert"></div>
+			</div>
+			<form role="form">
+				<div class="form-group">
+					<label for="fullConferenceName">Full conference name</label>
+					<input type="text" class="form-control" id="fullConferenceName" placeholder="Enter full conference name (e.g. The ACM CHI Conference on Human Factors in Computing Systems)" />
+				</div>
+				<div class="form-group">
+					<label for="shortConferenceName">Short conference name</label>
+					<input type="text" class="form-control" id="shortConferenceName" placeholder="Enter short conference name (e.g. CHI 2015)" />
+				</div>
+				<div class="form-group">
+					<label for="conferenceDescription">Conference Description</label>
+					<textarea rows="1" class="form-control" id="conferenceDescription" placeholder="(optional)"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="conferenceLocation">Conference Location</label>
+					<textarea rows="1" class="form-control" id="conferenceLocation" placeholder="Enter the conference location (e.g. Pittsburgh, PA USA)"></textarea>
+				</div>
+			</form>
+			<div class="csvs row">
+				<div class="col-md-12">
+					<div id="uploaded_files" class="row"></div>
+					<div class="drag_to">Drop .csv files here to upload</div>
+					<p id="filereader">File API &amp; FileReader API not supported</p>
+					<p id="formdata">XHR2's FormData is not supported</p>
+				</div>
+			</div>
+			<div class = "map_views">
+			</div>
+			<div class="maps row">
+				<div class="col-md-4">
+					<div class="drag_to">Drop map images here to upload</div>
+				</div>
+				<div class="col-md-8" id="locations">
+					<div class="row">
+						<div class="col-md-12">
+							<button id="add_map_location" class="btn btn-block btn-default" type="button" data-toggle="modal" href="#mapLocationModal"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Map Location</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="generate row">
+				<div class="col-md-12">
+					<button id="generate_db" class="btn btn-primary btn-lg btn-block" type="button" disabled="disabled">Generate Database</button>
+					<div id="cant_gen_reason" class="text-warning"></div>
+					<button id="publish_db" class="btn btn-success btn-lg btn-block" type="button" disabled="disabled" data-toggle="modal" href="#publishModal">Publish</button>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" data-keyboard=false id="mapLocationModal" tabindex="-1" role="dialog" aria-labelledby="mapLocation" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Add Room</h4>
+					</div>
+					<div class="modal-body">
+						<p>Room Info:</p>
+						<div id="name_info" class="content">
+							<div class="row">
+								<div class="col-md-6">
+									<input id="room_display_name" type="text" class="form-control" placeholder="Room Display Name">
+								</div>
+								<div class="col-md-6">
+									<input id="room_csv_name" type="text" class="form-control" placeholder="Room Name in CSV files">
+								</div>
+							</div>
+							<div class="row select_map_text">
+								<p id="select_map_text">Select a map</p>
+							</div>
+							<div class="row">
+								<div id="select_map" class="col-md-12"></div>
+							</div>
+							<div class="row">
+								<div id="click_map" class="col-md-12"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" data-dismiss="modal" id="add_room" class="btn btn-primary">Add Room</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div class="modal fade" data-keyboard=false id="publishModal" tabindex="-1" role="dialog" aria-labelledby="mapLocation" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Publish Database</h4>
+					</div>
+					<div class="modal-body">
+						<p>Enter a summary of changes (each change seperated by a newline):</p>
+						<div class="content">
+							<div class="changes row">
+								<div class="col-md-12">
+									<textarea class="form-control" rows="" id="changes_sum" placeholder="Summary of changes"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" data-dismiss="modal" id="publish" class="btn btn-primary">Publish</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div id="schedule_preview"></div>
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="upload.js"></script>
+		<script type="text/javascript" src="jquery.timeago.js"></script>
+	</body>
+</html>

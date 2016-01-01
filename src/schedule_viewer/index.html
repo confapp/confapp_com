@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendor/jquery.mobile-1.3.2/jquery.mobile-1.3.2.css" />
+		<link rel="stylesheet" href="schedule_viewer_ui/style/schedule.css" />
+	</head>
+	<body><div data-role="page"><div id='content' data-role="content"></div></div></body>
+	<script type="text/javascript" src="vendor/ConstraintJS-0.9.0/cjs.min.js"></script>
+	<script type="text/javascript" src="vendor/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="vendor/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="vendor/able.js"></script>
+	<script type="text/javascript" src="core.js"></script>
+	<script type="text/javascript" src="db_query.js"></script>
+	<script type="text/javascript" src="schedule_viewer_ui/schedule_view.js"></script>
+	<script type="text/javascript" src="schedule_viewer_ui/session_blob.js"></script>
+	<script type="text/javascript" src="schedule_viewer_ui/session_page.js"></script>
+	<script type="cjs/template">
+		<div>Hello!</div>
+	</script>
+	<script type="text/javascript">
+		var DEFAULT_DB_URL = "../../generated/v1.json";
+		function getURLParameter(name) {
+			return decodeURIComponent(
+				(RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,DEFAULT_DB_URL])[1]
+			);
+		}
+		var db_url = getURLParameter("db_url");
+		ConfApp.load_db(db_url);
+		$(document).on("mobileinit", function() {
+			$("#content").schedule();
+		});
+	</script>
+	<script type="text/javascript" src="vendor/jquery.mobile-1.3.2/jquery.mobile-1.3.2.js"></script>
+</html>

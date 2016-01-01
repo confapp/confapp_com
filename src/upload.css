@@ -1,0 +1,157 @@
+/*
+#holder { border: 10px dashed #ccc; width: 300px; min-height: 300px; margin: 20px auto;}
+#holder.hover { border: 10px dashed #0c0; }
+#holder img { display: block; margin: 10px auto; }
+#holder p { margin: 10px; font-size: 14px; }
+progress { width: 300px; }
+progress:after { content: '%'; }
+#prog { text-align: center; }
+*/
+
+p {
+	margin-top: 20px;
+}
+.fail {
+	background: #c00;
+	padding: 2px;
+	color: #fff;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.drag_to {
+	border: 3px dashed #CCC;
+	min-height: 30px;
+	box-sizing: border-box;
+	padding: 10px;
+	font-family: "HelveticaNeue-UltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light";
+	font-weight: 100;
+	text-align: center;
+	font-size: 2em;
+	color: #CCC;
+}
+
+.drag_to.hover {
+	border-color: #BADA55;
+	color: #BADA55;
+}
+
+#uploaded_files.empty {
+	display: none;
+}
+
+#uploaded_files {
+	border: 1px solid #CCC;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#uploaded_files > .category.col-md-12 {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #333;
+	background-color: #EEE;
+	border-bottom: 1px solid #BBB;
+	border-bottom: 1px solid #BBB;
+}
+abbr[title] {
+	cursor: default;
+	border-bottom: none;
+}
+#uploaded_files > .col-md-12 {
+	border-bottom: 1px solid #F3F3F3;
+}
+#uploaded_files > .col-md-12:last-child {
+	border-bottom: none;
+}
+#uploaded_files .file {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+#uploaded_files .file.even {
+	background-color: #F9F9F9;
+}
+#uploaded_files .file.odd {
+	background-color: #FFF;
+}
+#uploaded_files .file.danger {
+	background-color: #F2DEDE;
+	color: #900;
+}
+#uploaded_files .file.danger a {
+	color: #900;
+}
+#uploaded_files .error {
+	background-color: #F2DEDE;
+	color: #900;
+}
+.map_file {
+	position: relative;
+	margin-bottom: 25px;
+	padding-bottom: 25px;
+}
+.map_file button.remove {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+
+.map_file .rename_group {
+	margin-bottom:5px;
+}
+
+.csvs.row {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.maps.row {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.changes.row {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.modal .map_file {
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+	border: 1px solid #FFF;
+}
+.modal .map_file:hover {
+	background-color: #F7F7F7;
+	border: 1px solid #DDD;
+}
+.modal .map_file.selected {
+	color: #468847;
+	background-color: #DFF0D8;
+	border: 1px solid #D6E9C6;
+}
+.location.row {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #EEE;
+}
+.location.row:last-child {
+	border-bottom: none;
+}
+.location.row .img_container{
+	border: 1px solid #CCC;
+}
+.location.row .display_name, .location.row .csv_name, .location.row .remove {
+	padding-top: 10px;
+}
+.generate.row {
+	margin-bottom: 30px;
+}
+#cant_gen_reason {
+	margin-top: 10px;
+	margin-bottom:10px;
+}
+#publish_db {
+	margin-top: 10px;
+}
