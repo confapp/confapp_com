@@ -184,6 +184,7 @@
 			</div>
 			<div class="rightside col-md-4">
 				<a class="btn btn-xl btn-default btn-block" href="mailto:confapp@googlegroups.com?Subject=ConfApp Inquiry">Contact us</a>
+				<a class="btn btn-xl btn-primary btn-block" href="http://admin.conf-app.com/" Inquiry">Conference Administrators</a>
 			</div>
 		</div>
 		<div class="row primary content">
